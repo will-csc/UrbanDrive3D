@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://d2g0hqvaqetxk"]
+
+[ext_resource type="PackedScene" uid="uid://daqscwmgqw7w4" path="res://addons/Basic CharacterBody3D/Player.tscn" id="1_i2nf4"]
+[ext_resource type="PackedScene" uid="uid://88vldidtb8gy" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_sedan.gltf" id="2_am3uj"]
+[ext_resource type="PackedScene" uid="uid://b6sd883lj1b1m" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_C.gltf" id="3_41s58"]
+[ext_resource type="PackedScene" uid="uid://b78d3tdemxfs1" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_G_withoutBase.gltf" id="4_634n3"]
+[ext_resource type="PackedScene" uid="uid://dr6tdnjmjyhy8" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_D_withoutBase.gltf" id="4_cfdqf"]
+[ext_resource type="Script" uid="uid://bogsy02xd1gq0" path="res://scripts/car_base.gd" id="5_cfdqf"]
+[ext_resource type="PackedScene" uid="uid://cmaejd7dauydn" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_F.gltf" id="5_nwhyr"]
+[ext_resource type="PackedScene" uid="uid://ddsme03o3bffc" path="res://addons/kaykit_city_builder_bits/Assets/gltf/box_A.gltf" id="5_sw510"]
+[ext_resource type="PackedScene" uid="uid://c2kjw0qv2f5qi" path="res://addons/kaykit_city_builder_bits/Assets/gltf/box_B.gltf" id="6_pwmbk"]
+[ext_resource type="Script" uid="uid://c7by6l6685uqg" path="res://scripts/car_camera_3d.gd" id="7_nwhyr"]
+[ext_resource type="PackedScene" uid="uid://but8e4yqepyhh" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_B.gltf" id="7_veyyo"]
+[ext_resource type="PackedScene" uid="uid://b47gy2uxvaeg3" path="res://addons/kaykit_city_builder_bits/Assets/gltf/building_B_withoutBase.gltf" id="8_8thtw"]
+[ext_resource type="PackedScene" uid="uid://cy4lbh8ivgrkw" path="res://addons/kaykit_city_builder_bits/Assets/gltf/bush.gltf" id="9_wrj0c"]
+[ext_resource type="PackedScene" uid="uid://vwgsbiqf5xlf" path="res://addons/kaykit_city_builder_bits/Assets/gltf/dumpster.gltf" id="14_shnhm"]
+
+[sub_resource type="Environment" id="Environment_41s58"]
+background_mode = 1
+background_color = Color(0.989508, 0.70626974, 0.5390493, 1)
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 0.1
+ssao_intensity = 16.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nx17a"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i2nf4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41s58"]
+size = Vector3(0.43359375, 0.35610962, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwhyr"]
+size = Vector3(0.7635498, 0.29937744, 0.18945313)
+
+[node name="Main" type="Node3D" unique_id=1921926791]
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1924684670]
+environment = SubResource("Environment_41s58")
+
+[node name="Builds" type="Node3D" parent="." unique_id=2031831063]
+
+[node name="building_C2" parent="Builds" unique_id=141046167 instance=ExtResource("3_41s58")]
+transform = Transform3D(0.010279741, 0, -0.99994713, 0, 1, 0, 0.99994713, 0, 0.010279741, 4.7239695, 0, -5.89966)
+
+[node name="building_D_withoutBase2" parent="Builds" unique_id=2014159200 instance=ExtResource("4_cfdqf")]
+transform = Transform3D(-0.010279864, 0, -0.99994725, 0, 1, 0, 0.99994725, 0, -0.010279864, 4.478859, 0, -10.600616)
+
+[node name="building_F2" parent="Builds" unique_id=1233722744 instance=ExtResource("5_nwhyr")]
+transform = Transform3D(-0.0033510402, 0, -0.99999446, 0, 1, 0, 0.99999446, 0, -0.0033510402, 4.6610513, 0, -8.279129)
+
+[node name="building_G_withoutBase2" parent="Builds" unique_id=1203991551 instance=ExtResource("4_634n3")]
+transform = Transform3D(0.0029496476, 0, -0.99999565, 0, 1, 0, 0.99999565, 0, 0.0029496476, 4.4282417, 2.3841858e-07, -2.7792273)
+
+[node name="box_A2" parent="Builds" unique_id=689714303 instance=ExtResource("5_sw510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5079145, -0.0033794418, -3.917286)
+
+[node name="box_B2" parent="Builds" unique_id=458551773 instance=ExtResource("6_pwmbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.284403, 1.3620317e-07, -3.9003372)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1069808047]
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground" unique_id=737346791]
+transform = Transform3D(5, 0, 0, 0, 0.1, 0, 0, 0, 8.13, 0.83903813, 0.06700325, -4.5480814)
+mesh = SubResource("PlaneMesh_nx17a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1586369250]
+transform = Transform3D(0.58, 0, 0, 0, 1.95, 0, 0, 0, 1.025, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_i2nf4")
+
+[node name="box_A2" parent="Ground" unique_id=149500646 instance=ExtResource("5_sw510")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7394686, 2.2351742e-08, -3.9182768)
+
+[node name="box_B2" parent="Ground" unique_id=1701133455 instance=ExtResource("6_pwmbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3242826, 1.6993885e-08, -4.106706)
+
+[node name="building_B2" parent="Ground" unique_id=44825977 instance=ExtResource("7_veyyo")]
+transform = Transform3D(-0.999764, 0, -0.021727562, 0, 1, 0, 0.021727562, 0, -0.999764, 2.6356378, 0, 2.4951668)
+
+[node name="building_B_withoutBase2" parent="Ground" unique_id=1998276516 instance=ExtResource("8_8thtw")]
+transform = Transform3D(0.022512874, 0, -0.99974656, 0, 1, 0, 0.99974656, 0, 0.022512874, 4.698178, -2.3841858e-07, -0.46084118)
+
+[node name="bush2" parent="Ground" unique_id=820384024 instance=ExtResource("9_wrj0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9123678, 0, 0.31585395)
+
+[node name="bush3" parent="Ground" unique_id=1210033049 instance=ExtResource("9_wrj0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5406926, -1.1920929e-07, 1.2781993)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1746570207]
+transform = Transform3D(1, 0, 0, 0, 0.035353065, 0.99937487, 0, -0.99937487, 0.035353065, 0, 5.9860716, 0.015313745)
+
+[node name="Player" parent="." unique_id=855109756 instance=ExtResource("1_i2nf4")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.4268157, 0.28937888, -9.624577)
+walk_speed = 1.0
+sprint_speed = 2.0
+jump_force = 2.0
+
+[node name="CarBase" type="CharacterBody3D" parent="." unique_id=973123124 node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
+transform = Transform3D(-0.027816923, 0, 0.99961305, 0, 1, 0, -0.99961305, 0, -0.027816923, -3.1778474, 0.13211727, -8.746479)
+script = ExtResource("5_cfdqf")
+camera_carro = NodePath("CameraPivot/Camera3D")
+area_interacao = NodePath("Area3D")
+jogador = NodePath("../Player")
+
+[node name="car_sedan2" parent="CarBase" unique_id=900899783 instance=ExtResource("2_am3uj")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBase" unique_id=1473669993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00390625, 0.11500549, 0)
+shape = SubResource("BoxShape3D_41s58")
+
+[node name="Area3D" type="Area3D" parent="CarBase" unique_id=1492402437]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarBase/Area3D" unique_id=759159245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00592041, 0.16879272, 0.059570313)
+shape = SubResource("BoxShape3D_nwhyr")
+
+[node name="CameraPivot" type="Node3D" parent="CarBase" unique_id=1056377995]
+
+[node name="Camera3D" type="Camera3D" parent="CarBase/CameraPivot" unique_id=1326307127]
+transform = Transform3D(-0.9999995, 0, -0.0009774286, -0.00038713447, 0.91821843, 0.39607424, 0.000897493, 0.3960744, -0.918218, 0.004059285, 0.6424273, -0.9914248)
+script = ExtResource("7_nwhyr")
+
+[node name="dumpster2" parent="." unique_id=6478034 instance=ExtResource("14_shnhm")]
+transform = Transform3D(0.99045664, 0, 0.1378249, 0, 1, 0, -0.1378249, 0, 0.99045664, 5.2588825, 0.07003236, 1.5449117)
+
+[connection signal="body_entered" from="CarBase/Area3D" to="CarBase" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="CarBase/Area3D" to="CarBase" method="_on_area_3d_body_exited"]
