@@ -4,6 +4,10 @@ UrbanDrive3D is a small Godot 4 prototype focused on urban exploration and simpl
 
 ## Overview
 
+<img width="686" height="386" alt="image" src="https://github.com/user-attachments/assets/56ef43cd-c7de-4014-abf7-6322e302a420" />
+
+## Description
+
 This project currently includes:
 
 - First-person / third-person style character movement based on a reusable `CharacterBody3D` controller
