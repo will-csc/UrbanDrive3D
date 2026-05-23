@@ -2,11 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://daqscwmgqw7w4" path="res://addons/Basic CharacterBody3D/Player.tscn" id="1_i2nf4"]
 [ext_resource type="PackedScene" uid="uid://88vldidtb8gy" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_sedan.gltf" id="2_am3uj"]
-[ext_resource type="PackedScene" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_hatchback.gltf" id="3_hatch"]
-[ext_resource type="PackedScene" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_police.gltf" id="4_police"]
-[ext_resource type="PackedScene" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_taxi.gltf" id="5_taxi"]
+[ext_resource type="PackedScene" uid="uid://si4bdxwwvdur" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_hatchback.gltf" id="3_hatch"]
+[ext_resource type="PackedScene" uid="uid://n5v2g7nmdusf" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_police.gltf" id="4_police"]
 [ext_resource type="Script" uid="uid://cgbx7d4fgsn8u" path="res://scripts/city_generator.gd" id="5_41s58"]
 [ext_resource type="Script" uid="uid://bogsy02xd1gq0" path="res://scripts/car_base.gd" id="5_cfdqf"]
+[ext_resource type="PackedScene" uid="uid://c1ippag4h1vc2" path="res://addons/kaykit_city_builder_bits/Assets/gltf/car_taxi.gltf" id="5_taxi"]
 [ext_resource type="Script" uid="uid://c7by6l6685uqg" path="res://scripts/car_camera_3d.gd" id="7_nwhyr"]
 
 [sub_resource type="Environment" id="Environment_41s58"]
@@ -81,78 +81,78 @@ shape = SubResource("BoxShape3D_nwhyr")
 transform = Transform3D(-0.9999995, 0, -0.0009774286, -0.00038713447, 0.91821843, 0.39607424, 0.000897493, 0.3960744, -0.918218, 0.004059285, 0.6424273, -0.9914248)
 script = ExtResource("7_nwhyr")
 
-[node name="CarHatchback" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
-transform = Transform3D(-0.027816923, 0, 0.99961305, 0, 1, 0, -0.99961305, 0, -0.027816923, -12.0, 0.13211727, -5.1)
+[node name="CarHatchback" type="CharacterBody3D" parent="." unique_id=1393651913 node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
+transform = Transform3D(-0.027816923, 0, 0.99961305, 0, 1, 0, -0.99961305, 0, -0.027816923, -12, 0.13211727, -5.1)
 script = ExtResource("5_cfdqf")
 camera_carro = NodePath("CameraPivot/Camera3D")
 area_interacao = NodePath("Area3D")
 jogador = NodePath("../Player")
 
-[node name="car_hatchback" parent="CarHatchback" instance=ExtResource("3_hatch")]
+[node name="car_hatchback" parent="CarHatchback" unique_id=1847825148 instance=ExtResource("3_hatch")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarHatchback"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarHatchback" unique_id=1209714688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00390625, 0.11500549, 0)
 shape = SubResource("BoxShape3D_41s58")
 
-[node name="Area3D" type="Area3D" parent="CarHatchback"]
+[node name="Area3D" type="Area3D" parent="CarHatchback" unique_id=175854578]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarHatchback/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarHatchback/Area3D" unique_id=814812716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00592041, 0.16879272, 0.059570313)
 shape = SubResource("BoxShape3D_nwhyr")
 
-[node name="CameraPivot" type="Node3D" parent="CarHatchback"]
+[node name="CameraPivot" type="Node3D" parent="CarHatchback" unique_id=1770949912]
 
-[node name="Camera3D" type="Camera3D" parent="CarHatchback/CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CarHatchback/CameraPivot" unique_id=234729022]
 transform = Transform3D(-0.9999995, 0, -0.0009774286, -0.00038713447, 0.91821843, 0.39607424, 0.000897493, 0.3960744, -0.918218, 0.004059285, 0.6424273, -0.9914248)
 script = ExtResource("7_nwhyr")
 
-[node name="CarPolice" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
+[node name="CarPolice" type="CharacterBody3D" parent="." unique_id=171249088 node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
 transform = Transform3D(-0.027816923, 0, 0.99961305, 0, 1, 0, -0.99961305, 0, -0.027816923, 2.5, 0.13211727, 3.2)
 script = ExtResource("5_cfdqf")
 camera_carro = NodePath("CameraPivot/Camera3D")
 area_interacao = NodePath("Area3D")
 jogador = NodePath("../Player")
 
-[node name="car_police" parent="CarPolice" instance=ExtResource("4_police")]
+[node name="car_police" parent="CarPolice" unique_id=1914602714 instance=ExtResource("4_police")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarPolice"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarPolice" unique_id=1308057419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00390625, 0.11500549, 0)
 shape = SubResource("BoxShape3D_41s58")
 
-[node name="Area3D" type="Area3D" parent="CarPolice"]
+[node name="Area3D" type="Area3D" parent="CarPolice" unique_id=1970173731]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarPolice/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarPolice/Area3D" unique_id=2146945188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00592041, 0.16879272, 0.059570313)
 shape = SubResource("BoxShape3D_nwhyr")
 
-[node name="CameraPivot" type="Node3D" parent="CarPolice"]
+[node name="CameraPivot" type="Node3D" parent="CarPolice" unique_id=1721959828]
 
-[node name="Camera3D" type="Camera3D" parent="CarPolice/CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CarPolice/CameraPivot" unique_id=1916250215]
 transform = Transform3D(-0.9999995, 0, -0.0009774286, -0.00038713447, 0.91821843, 0.39607424, 0.000897493, 0.3960744, -0.918218, 0.004059285, 0.6424273, -0.9914248)
 script = ExtResource("7_nwhyr")
 
-[node name="CarTaxi" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
-transform = Transform3D(-0.027816923, 0, 0.99961305, 0, 1, 0, -0.99961305, 0, -0.027816923, -20.0, 0.13211727, -12.0)
+[node name="CarTaxi" type="CharacterBody3D" parent="." unique_id=586131678 node_paths=PackedStringArray("camera_carro", "area_interacao", "jogador")]
+transform = Transform3D(-0.027816923, 0, 0.99961305, 0, 1, 0, -0.99961305, 0, -0.027816923, -20, 0.13211727, -12)
 script = ExtResource("5_cfdqf")
 camera_carro = NodePath("CameraPivot/Camera3D")
 area_interacao = NodePath("Area3D")
 jogador = NodePath("../Player")
 
-[node name="car_taxi" parent="CarTaxi" instance=ExtResource("5_taxi")]
+[node name="car_taxi" parent="CarTaxi" unique_id=1070325957 instance=ExtResource("5_taxi")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarTaxi"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarTaxi" unique_id=567539702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00390625, 0.11500549, 0)
 shape = SubResource("BoxShape3D_41s58")
 
-[node name="Area3D" type="Area3D" parent="CarTaxi"]
+[node name="Area3D" type="Area3D" parent="CarTaxi" unique_id=114593849]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CarTaxi/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarTaxi/Area3D" unique_id=1687702588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00592041, 0.16879272, 0.059570313)
 shape = SubResource("BoxShape3D_nwhyr")
 
-[node name="CameraPivot" type="Node3D" parent="CarTaxi"]
+[node name="CameraPivot" type="Node3D" parent="CarTaxi" unique_id=1687883349]
 
-[node name="Camera3D" type="Camera3D" parent="CarTaxi/CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="CarTaxi/CameraPivot" unique_id=1976408182]
 transform = Transform3D(-0.9999995, 0, -0.0009774286, -0.00038713447, 0.91821843, 0.39607424, 0.000897493, 0.3960744, -0.918218, 0.004059285, 0.6424273, -0.9914248)
 script = ExtResource("7_nwhyr")
 
